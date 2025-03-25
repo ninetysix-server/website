@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <link rel="icon" type="image/x-icon" href="/assets/images/icon.png">
     <meta name="theme-color" content="#07db00">
     <title>Home - Wireless Speakers</title>
@@ -14,6 +14,28 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+  .grid-item {
+    width: 100%; /* Ensure full width of grid cell */
+    min-width: 0; /* Prevent content from forcing width expansion */
+    overflow: hidden; /* Contain content within fixed width */
+}
+
+/* For the grid container */
+.grid-container {
+    grid-auto-rows: 1fr; /* Equal height rows by default */
+}
+
+
+
+
+.grid-item.expanded {
+    grid-row: span 2; /* Make item span two rows when expanded */
+    height: auto; /* Allow natural height based on content */
+    min-height: 100%; /* At least fill one row */
+}
+    </style>
 </head>
 <body>
 
