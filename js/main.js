@@ -152,11 +152,23 @@ function initializeWebsiteDesignNavigation() {
 }
 
 function initializeServiceGridInteractions() {
-    document.querySelectorAll('.grid-item').forEach(item => {
+    document.querySelectorAll('.grid-item:not(.image-block)').forEach(item => {
         item.addEventListener('click', function() {
+            // Close all other expanded items
+            document.querySelectorAll('.grid-item.expanded').forEach(expandedItem => {
+                if (expandedItem !== this) {
+                    expandedItem.classList.remove('expanded');
+                    const infoPanel = expandedItem.querySelector('.additional-info');
+                    if (infoPanel) infoPanel.style.display = 'none';
+                }
+            });
+            
+            // Toggle current item
             this.classList.toggle('expanded');
             const infoPanel = this.querySelector('.additional-info');
-            if (infoPanel) infoPanel.style.display = this.classList.contains('expanded') ? 'block' : 'none';
+            if (infoPanel) {
+                infoPanel.style.display = this.classList.contains('expanded') ? 'block' : 'none';
+            }
         });
     });
 }
