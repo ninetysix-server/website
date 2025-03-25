@@ -1,0 +1,11 @@
+/* Default styles for all screens */
+body {
+    display: block;
+}
+
+/* Hide the page for screens larger than a tablet (e.g., 768px) */
+@media screen and (min-width: 769px) {
+    body {
+        display: none;
+    }
+}
