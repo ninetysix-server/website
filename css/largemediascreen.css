@@ -1,0 +1,174 @@
+/* For tablet and desktop screens (min-width: 767px) */
+@media screen and (min-width: 767px) {
+
+    /* Hide the second image (ban-3.png) on tablet/desktop screens */
+    .image-container img[src="assets/images/ban-3.png"] {
+        display: none;
+    }
+
+    /* Center the first image */
+    .image-container .col-md-6 {
+        text-align: center;  /* Center the image horizontally */
+        margin: 0 auto;      /* Ensures center alignment */
+    }
+
+    .image-container img[src="assets/images/ban-1.png"] {
+        display: none;
+    }
+
+    /* Paragraph below the first image, centered */
+    .desktop-paragraph {
+        display: block;
+        text-align: center;
+        font-size: 1rem; /* Adjust the font size to a reasonable size */
+        color: #ffffff;
+        margin-top: 20px;
+        max-width: 80%;  /* Ensures paragraph width does not exceed image width */
+        margin-left: auto;
+        margin-right: auto; /* Center the paragraph */
+        font-weight: normal;  /* Remove boldness */
+    }
+}
+
+/* For mobile screens (max-width: 767px) */
+@media screen and (max-width: 767px) {
+
+    /* Hide the paragraph on mobile */
+    .desktop-paragraph {
+        display: none;
+    }
+
+    /* Keep the second image visible on mobile */
+    .image-container img[src="assets/images/ban-3.png"] {
+        display: block;
+    }
+
+    /* Keep the first image's size normal for mobile */
+    .image-container img[src="assets/images/ban-1.png"] {
+        width: 100%;
+    }
+}
+
+
+
+/* Default: Show the original image on small screens */
+.advert-image img {
+    display: block; /* Show default image */
+  }
+  
+  /* Hide the default image and show the new image on tablet and larger screens */
+  @media screen and (min-width: 768px) {
+    .advert-image img[src="assets/images/Multi-Banner-1.png"] {
+      display: none; /* Hide the original image on tablet and larger screens */
+    }
+  
+    .advert-image img[src="assets/images/Multi-Banner-11.png"] {
+      display: block; /* Show the new image */
+    }
+  }
+  
+
+
+
+
+
+/* Tablet and Desktop Screens Only */
+@media (min-width: 769px) {
+    /* Flex layout to position .service-buttons to the left of .service-images */
+    .services {
+        display: flex;
+        flex-direction: row;
+        align-items: flex-start;
+    }
+
+    /* Style for .service-buttons */
+    .service-buttons {
+        flex: 0 0 200px; /* Fixed width for buttons block */
+        margin-right: 20px; /* Space between buttons and images */
+    }
+
+    /* Arrange buttons in a 2x2 grid */
+    .service-buttons .d-flex {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns */
+        gap: 10px; /* Space between buttons */
+    }
+
+    /* Style for .service-images */
+    .service-images {
+        flex: 1; /* Take remaining space */
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px; /* Space between images */
+    }
+
+    /* Reduce size of .service-images to match .service-buttons block */
+    .service-images .card-container {
+        flex: 0 0 calc(50% - 5px); /* 2 columns with gap */
+    }
+
+    /* Ensure cards fill their containers */
+    .service-images .card {
+        width: 70%;
+    }
+
+    /* Ensure the section uses flexbox to align items */
+.content-section {
+    display: flex;
+    align-items: flex-start; /* Align items to the top */
+    gap: 20px; /* Space between images and paragraph */
+}
+
+/* Style for the image container (no changes to images) */
+.image-container {
+    flex: 0 0 auto; /* Do not grow or shrink */
+}
+
+/* Style for the paragraph container */
+.services-text {
+    flex: 1; /* Take remaining space */
+}
+
+/* Style for the paragraph */
+.services-text p {
+    margin: 0; /* Remove default margin */
+    font-size: 16px;
+    line-height: 1.6;
+    color: #333;
+    text-align: justify; /* Justify text for better alignment */
+    padding-right: 100px;
+    margin-top: 40px;
+}
+
+.gallery .btn-view  {
+    display: none;
+}
+
+.art-img {
+    margin-left: -30px;
+}
+/* Target only the container inside .advert-image */
+.advert-image .container {
+    display: flex; /* Use flexbox for horizontal alignment */
+    gap: 20px; /* Space between images */
+}
+
+/* Ensure the advert-content containers take equal space */
+.advert-image .advert-content {
+    flex: 1; /* Each container takes equal space */
+}
+
+/* Optional: Adjust image responsiveness */
+.advert-image .advert-content img {
+    width: 100%; /* Ensure images fill their containers */
+    height: auto; /* Maintain aspect ratio */
+}
+}
+
+
+  @media (max-width: 769px) {
+    .services-text p {
+        display: none;
+      }
+    
+  }

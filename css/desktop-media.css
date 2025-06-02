@@ -1,0 +1,158 @@
+        /* DESKTOP STYLES (768px and up) */
+@media (min-width: 768px) {
+
+    .services .container {
+        margin-top: -20px;
+    }
+
+    /* Advert Image Section */
+    .advert-image {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    
+    .advert-image a {
+        flex: 0 1 200%;
+    }
+    
+    .advert-image img {
+        max-width: 100%;
+        height: auto;
+    }
+    
+    .advert-image .advert-button {
+        flex: 0 1 30%;
+        display: block !important; /* Force show the button */
+        padding: 15px 25px;
+        font-size: 1.1rem;
+        margin-left: 20px;
+    }
+
+    /* Service Buttons */
+    .service-buttons {
+        margin-bottom: 40px;
+    }
+    
+    .service-buttons .d-flex {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+        overflow: visible !important;
+    }
+    
+    .service-buttons .btn {
+        padding: 10px 25px;
+        font-size: 1rem;
+        margin: 0 !important;
+        border-radius: 30px;
+    }
+
+    /* Service Images Grid */
+    .service-images {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 30px;
+        margin-top: 0 !important;
+    }
+    
+    .card-container {
+        display: block !important;
+        opacity: 1 !important;
+        transform: none !important;
+    }
+    
+    .service-images .card {
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .service-images .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .service-images .card-body {
+        position: static;
+        background-color: transparent;
+        padding: 15px;
+        text-align: center;
+        border-top: 1px solid #eee;
+    }
+    
+    .service-images .go-to-button {
+        position: static;
+        width: 100%;
+        padding: 10px;
+        background: #004370;
+        border-radius: 5px;
+    }
+    
+    .service-images .go-to-button:hover {
+        background-color: #000000;
+    }
+
+       .service-buttons {
+        display: none;
+    }
+
+}
+
+@media (min-width: 769px) {
+    #smart1  {
+        display: none;
+    }
+    #smart2  {
+        display: none;
+    }
+    #smart3  {
+        display: none;
+    }
+
+    .text-center {
+        margin-top: 70px;
+    }
+        .mobile-advert {
+        display: none;
+    }
+
+    .counter .container {
+         margin-top: -30px;
+    }
+
+    .portfolio .container {
+         margin-top: -30px;
+         margin-bottom: 40px;
+    }
+
+    .design-card {
+        margin: 30px;
+    }
+
+    .whatsapp-btn {
+        margin-bottom: -60px;
+    }
+
+    .advert-image .container {
+        margin-bottom:-90px;
+        margin-top: 90px;
+    }
+
+
+    }
+
+
+
+/* Optional: Add this if you want to limit maximum width on large screens */
+@media (min-width: 1200px) {
+    .advert-image,
+    .service-buttons,
+    .service-images {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}

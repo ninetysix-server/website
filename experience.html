@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/assets/images/icon.png">
+    <meta name="theme-color" content="#07db00">
+    <title>Experiece - 96 Studios</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/login.css">
+    <link rel="stylesheet" href="css/display.css">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <style>
+        @media (min-width: 769px) {
+        #smart1  {
+            display: none;
+        }
+        #smart2  {
+            display: none;
+        }
+        .advert-image .container {
+        padding-top: 100px;
+    }
+    /* New container for both sections */
+.sections-container {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+    background-color: #f8f9fa;
+}
+
+/* EXPERIENCE SECTION ADJUSTMENTS */
+.experience {
+    margin-bottom: 0;
+    padding: 40px 0;
+}
+
+/* BEFORE-AFTER SECTION ADJUSTMENTS */
+.before-after {
+    padding: 40px 0;
+}
+
+/* Desktop layout */
+@media (min-width: 769px) {
+    .sections-container {
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        padding: 40px 20px;
+    }
+    
+    .experience, .before-after {
+        flex: 1;
+        padding: 0;
+    }
+    
+    .experience .container {
+        padding-right: 20px;
+    }
+    
+    .before-after .container {
+        padding-left: 20px;
+    }
+    
+    /* Adjust the juxtapose slider width */
+    .juxtapose {
+        max-width: 100%;
+    }
+
+    .square-image {
+        scale: 105%;
+    }
+    
+    /* Adjust the experience section layout */
+    .experience .container {
+        flex-direction: column;
+    }
+    
+    .experience .square-image {
+        max-width: 100%;
+    }
+}
+    }
+
+    
+            /*Mobile and Tablet*/
+    @media (max-width: 768px) {
+    .flag-icon {
+     height: 35px;
+     width: auto;
+    }
+ }
+
+
+    </style>
+
+</head>
+<body>
+
+   <header>
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top shadow-sm">
+        <!-- Logo and South Africa Flag -->
+        <div class="d-flex align-items-center">
+            <a class="navbar-brand" href="index.html" style="margin-right: 2px;">
+                <img src="assets/images/logo.png" alt="Logo" class="logo">
+            </a>
+            <div class="ml-2 d-flex align-items-center flag-container" >
+                <img src="assets/images/sa.png" alt="South Africa Flag" class="flag-icon">
+                <span class="ml-1 currency-text">ZAR</span>
+            </div>
+        </div>
+
+        <!-- Hamburger Button (Visible on Mobile) -->
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <!-- Navigation Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto">
+                <!-- Home Link -->
+                <li class="nav-item" >
+                    <a class="nav-link" href="index.html"></a>
+                </li>
+
+                <!-- Services Link -->
+                <li class="nav-item">
+                    <a class="nav-link" href="/motioncreatives.html">GRAPHIC DESIGN</a>
+                </li>
+                <!-- Services Link -->
+                <li class="nav-item">
+                    <a class="nav-link" id="smart1" href="#">PHOTOGRAPHY</a>
+                </li>
+                <!-- Services Link -->
+                <li class="nav-item">
+                    <a class="nav-link" id="smart2" href="#">WALL ART & DECO</a>
+                </li>
+               
+                <!-- Computer Link -->
+                <li class="nav-item">
+                    <a class="nav-link" href="https://onclick.96studios.co.za">COMPUTER & SOFTWARE MAINTENANCE</a>
+                </li>
+
+                <!-- Experience Link -->
+                <li class="nav-item">
+                    <a class="nav-link" href="experience.html">EXPERIENCE</a>
+                </li>
+
+                <!-- About Link -->
+                <li class="nav-item">
+                    <a class="nav-link" href="about.html">ABOUT US</a>
+                </li>
+                <!-- Need Help Link -->
+                <li class="nav-item">
+                    <a class="nav-link" href="https://wa.me/27817925033">NEED HELP?</a>
+                </li>
+            </ul>
+
+            <!-- Icons (Cart, Profile) - Now properly horizontal -->
+            <ul class="navbar-nav ml-auto d-flex flex-row" style="margin-top: 20px;">
+                <!-- Cart Icon with Counter -->
+                <li class="nav-item cart-item me-3">
+                    <a class="nav-link cart-trigger" href="#" id="cart-trigger">
+                        <img src="assets/icons/cart.png" alt="Cart" class="icon">
+                        <span class="cart-counter badge badge-pill badge-danger">0</span>
+                    </a>
+                </li>
+                
+                <!-- Profile Icon -->
+                <li class="nav-item profile-item">
+                    <a class="nav-link" href="#" onclick="showAuth()">
+                        <img src="assets/icons/profile.png" alt="Profile" class="icon">
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
+
+
+    <!-- Page Load Overlay -->
+    <div id="page-load-overlay" class="overlay">
+        <div class="custom-loader"></div>
+    </div>
+    
+    <section class="advert-image py-5">
+        <div class="container" style="margin-bottom:-20px; margin-top: 20px;">
+           <a href="http://onclick.96studios.co.za"><div class="advert-content position-relative" style="padding-bottom: 40px;">
+                <!-- Advert Image -->
+                <img src="assets/images/Banner-2.png" alt="Advert" class="img-fluid w-100">
+            </div></a> 
+    
+            <a href="http://onclick.96studios.co.za"><div class="advert-content position-relative">
+                <!-- Advert Image -->
+                <img src="assets/images/Banner-3.png" alt="Advert" class="img-fluid w-100">
+            </div></a>
+        </div>
+    </section>
+
+    <div class="sections-container">
+    <section class="experience">
+        <div class="container">
+            <!-- Rectangle Image -->
+            <div hidden class="rectangle-image">
+                <img src="assets/images/experience.png" alt="Experience">
+            </div>
+    
+            <!-- Square Image with Button -->
+            <div class="square-image">
+                <img src="assets/images/profile.png" alt="Experience Square">
+                <a href="http://kaygdesigner.96studios.co.za" class="experience-button">Experience</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="before-after">
+        <div class="container">
+            <!-- Juxtapose Slider -->
+            <div class="juxtapose">
+                <img src="assets/images/before.png" alt="Before" data-label="Before">
+                <img src="assets/images/after.png" alt="After" data-label="After">
+            </div>
+        </div>
+    </section>
+</div>
+
+    <section class="online-secure py-5">
+        <div class="container">
+            <div class="row text-center">
+                <!-- Great Savings -->
+                <div class="col-md-3 mb-4">
+                    <div class="feature-item">
+                        <img src="assets/icons/wallet.png" alt="Great Savings" class="feature-icon">
+                        <h3 class="feature-title">Great Savings</h3>
+                        <p class="feature-text">Save big with our exclusive offers and discounts.</p>
+                    </div>
+                </div>
+    
+                <!-- Track Design -->
+                <div class="col-md-3 mb-4">
+                    <div class="feature-item">
+                        <img src="assets/icons/track.png" alt="Track Design" class="feature-icon">
+                        <h3 class="feature-title">Track Design</h3>
+                        <p class="feature-text">Monitor your design progress in real-time.</p>
+                    </div>
+                </div>
+    
+                <!-- 24/7 Support -->
+                <div class="col-md-3 mb-4">
+                    <div class="feature-item">
+                        <img src="assets/icons/secure-payments.png" alt="24/7 Support" class="feature-icon">
+                        <h3 class="feature-title">Secure Payments</h3>
+                        <p class="feature-text">Pay safe, anywhere.</p>
+                    </div>
+                </div>
+    
+                <!-- Online Design -->
+                <div class="col-md-3 mb-4">
+                    <div class="feature-item">
+                        <img src="assets/icons/online.png" alt="Online Design" class="feature-icon">
+                        <h3 class="feature-title">Online Design</h3>
+                        <p class="feature-text">Create and customize designs online with ease.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+   
+<section class="bottom-menu d-lg-none">
+    <div class="container">
+        <div class="row justify-content-around align-items-center">
+            <!-- Shop Icon -->
+            <div class="col-3 text-center">
+                <a href="motioncreatives.html" class="menu-item">
+                    <img src="assets/icons/shop.png" alt="Shop" class="menu-icon">
+                    <span class="menu-text">Shop</span>
+                </a>
+            </div>
+
+            <!-- Wishlist Icon -->
+            <div class="col-3 text-center">
+                <a href="#" class="menu-item">
+                    <img src="assets/icons/heart-react.png" alt="Wishlist" class="menu-icon">
+                    <span class="menu-text">Wishlist</span>
+                </a>
+            </div>
+
+            <!-- Cart Icon -->
+            <div class="col-3 text-center">
+                <a class="menu-item cart-trigger" href="#" id="cart-icon">
+                    <img src="assets/icons/bag.png" alt="Cart" class="menu-icon">
+                    <span class="menu-text">Cart</span>
+                    <span class="cart-counter badge badge-pill badge-danger" style="margin: 0px; top: -4px; right: 22px;">0</span>
+                </a>
+            </div>
+
+            <!-- Profile Icon -->
+            <div class="col-3 text-center">
+                <a href="#" class="menu-item" onclick="showAuth()">
+                    <img src="assets/icons/user.png" alt="Profile" class="menu-icon">
+                    <span class="menu-text">Profile</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<!-- Cart Section (Hidden by Default) -->
+<section class="cart-section" id="cart-section">
+    
+    <!-- Cart Header -->
+    <div class="cart-header">
+        <div class="cart-header-left">
+            <button class="btn btn-back" id="cart-close">
+                <img src="assets/icons/back-arrow.png" alt="Back" class="icon">
+            </button>
+            <span class="cart-title">Cart</span>
+        </div>
+        <div class="cart-header-right">
+            <span class="zar-text">ZAR</span>
+            <img src="assets/images/sa.png" alt="Flag" class="icon">
+        </div>
+    </div>
+
+    <!-- Cart Title -->
+    <div class="cart-title-container">
+        <img src="assets/images/cart-title-image.png" alt="Cart Title Image" class="cart-title-image">
+        <p class="cart-subtitle">Your Design Journey - Design more than you can imagine with <strong> DesignMORE.</strong></p>
+    </div>
+
+    <!-- Cart Body (Items will be added here dynamically) -->
+    <div class="cart-body">
+
+    </div>
+
+    <!-- Input Fields -->
+    <div class="input-fields">
+    
+        
+      <!-- Upload Sketch Overlay -->
+        <div id="upload-overlay" class="overlay">
+            <div class="upload-loader"></div>
+        </div>
+        
+        <!-- Upload Sketch -->
+        <div class="upload-sketch">
+            <label for="sketch-upload" class="upload-label">
+                <img src="assets/icons/upload.png" alt="Upload" class="upload-icon">
+                <span>Upload Sketch (JPG, JPEG, PNG)</span>
+            </label>
+            <input type="file" id="sketch-upload" accept=".jpg, .jpeg, .png" class="upload-input">
+        </div>
+        <!-- Design Description -->
+        <div class="design-description">
+            <textarea id="design-description" placeholder="Enter design description..." class="description-input" minlength="10" maxlength="500"></textarea>
+        </div>
+    </div>
+
+    <!-- Cost Info -->
+    <div class="cost-info">
+        <p class="designs-added">Designs Added: <span id="designs-count">0</span></p>
+        <div class="total-amount">
+            <span class="total-text">Total</span>
+            <span class="total-value">R0.00</span>
+        </div>
+    </div>
+
+    <!-- Proceed Button -->
+    <div class="proceed-container">
+        <button class="btn btn-proceed" onclick="showAuth()" style="background-color: black; color: white;">Proceed to Cart</button>
+    </div>
+</section>
+
+<!-- Profile Page Section -->
+<section class="profile-page" id="profilePage">
+    <div class="profile-page-overlay" onclick="hideAuth()"></div>
+
+    <!-- Authentication Forms Container -->
+    <div class="auth-container" id="authContainer" style="z-index: 999999;">
+           <button class="auth-close-btn" onclick="closeProfilePage()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+        </svg>
+    </button>
+        <!-- Login Form -->
+        <div id="loginForm">
+            <h2 class="form-title">Sign in</h2>
+            <form onsubmit="return signIn(event)">
+                <div class="form-group">
+                    <input type="email" id="loginEmail" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="loginPassword" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn-primary">Sign in</button>
+                <!-- Button with local Google icon -->
+                <button type="button" class="google-btn" onclick="signInWithGoogle()" style="background-color: white; color: black;">
+                    <img src="assets/icons/google-icon.png" alt="Google Icon"> <!-- Local Google icon -->
+                    Sign in with Google
+                </button>                
+                <div class="toggle-form">
+                    Dont have account? <a onclick="showRegisterForm()">Register</a>
+                </div>
+                <div class="toggle-form">
+                    <a onclick="showPasswordReset()">Forgot password?</a>
+                </div>
+                <div class="error" id="loginError"></div>
+            </form>
+        </div>
+
+        <!-- Registration Form -->
+        <div id="registerForm" style="display: none;">
+            <h2 class="form-title">Create account</h2>
+            <form onsubmit="return signUp(event)">
+                <div class="form-group">
+                    <input type="text" id="registerName" placeholder="Username" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" id="registerEmail" placeholder="Email" required>
+                </div>
+                <div class="form-group">
+                    <input type="password" id="registerPassword" placeholder="Password" required>
+                </div>
+                <button type="submit" class="btn-primary">Create account</button>
+                <div class="toggle-form">
+                    Already have an account? <a onclick="showLoginForm()">Sign in</a>
+                </div>
+                <div class="error" id="registerError"></div>
+            </form>
+        </div>
+
+        <!-- Password Reset Form -->
+        <div id="passwordResetForm" style="display: none;">
+            <h2 class="form-title">Reset Password</h2>
+            <form onsubmit="return sendPasswordReset(event)">
+                <div class="form-group">
+                    <input type="email" id="resetEmail" placeholder="Email" required>
+                </div>
+                <button type="submit" class="btn-primary">Send Reset Email</button>
+                <div class="toggle-form">
+                    <a onclick="showLoginForm()">Back to login</a>
+                </div>
+                <div class="error" id="resetError"></div>
+            </form>
+        </div>
+    </div>
+
+    <!-- Dashboard Container -->
+    <div class="auth-container dashboard" id="dashboard">
+       <!-- Profile Container -->
+       <div class="profile-container">
+            <div class="profile-header">
+                <h2 class="profile-title"> <span id="username"></span></h2>
+                <button class="settings-toggle" onclick="toggleSettings()" style="background-color: rgba(255, 255, 255, 0); width: 30px; outline: none;">
+                    <img src="assets/icons/settings.png" alt="Settings" class="icon">
+                </button>
+            </div>
+            <div class="profile-body">
+                <div class="profile-info">
+                    <p class="profile-email">Email: <span id="userEmail"></span></p>
+                </div>
+                <div class="empty-state-container">
+                    <div class="contents-state" style="display: none;">
+                        <!-- Cart Items will be inserted here -->
+                        <div class="cart-items-list"></div>
+                        
+                        <!-- Total Amount -->
+                        <div class="cart-total-profile">
+                            <h4>Total Amount: <span class="total-value-profile">R0.00</span></h4>
+                        </div>
+                          <!-- Track Design Button -->
+                        <button class="btn-track-design" onclick="showTrackDesign()" style="margin-top: 20px;">Track Design</button>
+                        <!-- Clear Cart Button -->
+                        <button class="btn-clear-cart" onclick="clearCart()" style="background-color: rgb(223, 42, 42);">Delete Cart</button>
+                    </div>
+                    <p class="empty-state">You have nothing here</p>
+                </div>
+                
+                <!-- Payment Popup -->
+                <div id="paymentPopup" class="payment-popup" style="display: none;">
+                    <div class="payment-popup-content">
+                        <h2 class="payment-title">Type of Payment</h2>
+                        
+                        <!-- Payment Options -->
+                        <div class="payment-options">
+                            <label class="payment-option">
+                                <input type="radio" name="paymentType" value="cash">
+                                <span>Cash</span>
+                            </label>
+                            <label class="payment-option">
+                                <input type="radio" name="paymentType" value="bank">
+                                <span>Bank</span>
+                            </label>
+                        </div>
+
+                        <!-- Accepted Payment Methods -->
+                        <div class="accepted-payment-methods">
+                            <h3>Payment Methods</h3>
+                            <div class="payment-images">
+                                <img src="assets/images/visa-img.png" alt="Cash">
+                                <img src="assets/images/mastercard-img.png" alt="Bank Transfer">
+                            </div>
+                        </div>
+
+                        <!-- Submit Button -->
+                        <button class="btn-primary" onclick="submitPaymentChoice()">Submit</button>
+                    </div>
+                </div>
+
+                <!-- Track Design Section -->
+                <div id="trackDesignSection" class="track-design-section" style="display: none;">
+                    <div class="track-design-header">
+                        <h2>Track design</h2>
+                        <button class="btn-close-track-design" onclick="hideTrackDesign()" style=" 
+                        border: none;
+                        font-size: 20px;
+                        color: #ffffff;
+                        background-color: #0c0c1b;
+                        cursor: pointer;
+                        width: 36px;
+                        height: 36px;
+                        margin-bottom: 10px;
+                        border-radius: 50%;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        transition: all 0.3s ease;">
+                         <i class="fas fa-times"></i>
+                        </button>
+                    </div>
+                
+                    <div class="user-info-card">
+                        <div class="user-avatar">
+                            <i class="fas fa-user-circle"></i>
+                        </div>
+                        <div class="user-details">
+                            <h3 id="trackUsername">John Doe</h3>
+                            <p id="trackEmail" class="truncate-email">john@example.com</p>
+                            <div class="user-status">
+                                <span class="status-badge active">Active</span>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="progress-container">
+                        <div class="progress-header">
+                            <h3>Your Design Journey</h3>
+                            <div class="progress-percentage" id="progressPercentage">100%</div>
+                        </div>
+                        
+                        <div class="progress-track">
+                            <div class="progress-bar">
+                                <div class="progress-fill" id="progressFill" style="width: 25%;"></div>
+                            </div>
+                            
+                            <div class="progress-stages">
+                                <div class="stage completed" data-stage="Preparing">
+                                    <div class="stage-icon">
+                                        <i class="fas fa-check"></i>
+                                    </div>
+                                    <span>Preparation</span>
+                                    <div class="stage-date"></div>
+                                </div>
+                                
+                                <div class="stage active" data-stage="Designing">
+                                    <div class="stage-icon">
+                                        <i class="fas fa-pencil-ruler"></i>
+                                    </div>
+                                    <span>Designing</span>
+                                    <div class="stage-date"></div>
+                                </div>
+                                
+                                <div class="stage" data-stage="Review">
+                                    <div class="stage-icon">
+                                        <i class="fas fa-search"></i>
+                                    </div>
+                                    <span>Review</span>
+                                    <div class="stage-date"></div>
+                                </div>
+                                
+                                <div class="stage" data-stage="Delivery">
+                                    <div class="stage-icon">
+                                        <i class="fas fa-box-open"></i>
+                                    </div>
+                                    <span>Delivery</span>
+                                    <div class="stage-date"></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="status-cards">
+                        <div class="status-card payment">
+                            <div class="status-icon">
+                                <i class="fas fa-credit-card"></i>
+                            </div>
+                            <div class="status-details">
+                                <h4>Payment Status</h4>
+                                <p id="paymentStatus" class="status-paid">Completed</p>
+                            </div>
+                        </div>
+                        
+                        <div class="status-card timeline">
+                            <div class="status-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="status-details">
+                                <h4>Estimated Completion</h4>
+                                <p id="designDuration">May 15, 2023</p>
+                            </div>
+                        </div>
+                    </div>
+                
+                    <div class="action-buttons">
+                        <a href="https://wa.me/27817925033" class="whatsapp-button" target="_blank">
+                            <i class="fab fa-whatsapp"></i> Chat with Designer
+                        </a>
+                        <a href="https://wa.me/27817925033" target="_blank">
+                            <button class="download-assets">
+                            <i class="fas fa-download"></i> Download Assets
+                        </button></a>
+                    </div>
+                </div>
+            </div>
+        
+            <!-- Settings Section (Hidden by Default) -->
+            <div class="settings-container" id="settingsContainer">
+                <div class="settings-section">
+                    <h3 class="settings-title" style="margin-top: 20px;">Account Details</h3>
+                    <p>Email Verified: <span id="emailVerified" class="not-verified-badge"></span></p>
+                    
+                    <div class="settings-actions">
+                        <button onclick="sendVerificationEmail()" class="btn-secondary">
+                            Resend Verification Email
+                        </button>
+                        <button onclick="showChangePassword()" class="btn-secondary">
+                            Change Password
+                        </button>
+                        <button onclick="deleteAccount()" class="btn-danger">
+                            Delete Account
+                        </button>
+                        <button onclick="signOut()" class="btn-google">
+                            Sign Out
+                        </button>
+                    </div>
+
+                    <!-- Password Change Form (Hidden by Default) -->
+                    <div id="changePasswordForm" class="password-form">
+                        <input type="password" id="newPassword" placeholder="New Password" required>
+                        <button onclick="changePassword()" class="btn-primary">
+                            Update Password
+                        </button>
+                        <div class="error" id="passwordError"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<script type="module" src="/js/firebase.js"></script>
+<script type="module" src="js/cart.js"></script>
+<script  src="js/main.js"></script>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+    const navbar = document.querySelector('.navbar.fixed-top');
+    let lastScroll = window.scrollY;
+    
+    // Make sure header starts visible
+    navbar.style.transform = 'none';
+    
+    // Add smooth transition
+    navbar.style.transition = 'transform 0.3s ease';
+    
+    window.addEventListener('scroll', function() {
+        const currentScroll = window.scrollY;
+        
+        // Scroll down - hide header
+        if (currentScroll > lastScroll && currentScroll > 10) {
+            navbar.style.transform = 'translateY(-100%)';
+        } 
+        // Scroll up - show header
+        else if (currentScroll < lastScroll) {
+            navbar.style.transform = 'none';
+        }
+        
+        lastScroll = currentScroll;
+    });
+});
+  </script>
+
+                    <script>
+                        document.addEventListener("DOMContentLoaded", function() {
+                        const emailElement = document.getElementById("trackEmail");
+                        const email = emailElement.textContent.trim();
+                        
+                        if (email.length > 10) {
+                            emailElement.textContent = email.substring(0, 7) + "..."; // Shows first 7 chars + "..."
+                            emailElement.title = email; // Tooltip shows full email
+                        }
+                        });
+                    </script>
+
+  
+</body>
+</html>

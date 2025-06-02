@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Support Our Creative Studio | Donate via WhatsApp | South Africa</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            --primary: #6a5acd; /* Slate blue */
+            --secondary: #25D366; /* WhatsApp green */
+            --dark: #2d3748;
+            --light: #f8f9fa;
+            --error: #dc3545;
+        }
+        
+        body {
+            background-color: #f5f7fa;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        .creative-header {
+            background:  #24d800;
+            color: white;
+            padding: 4rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .creative-header::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path fill="rgba(255,255,255,0.05)" d="M0,0 L100,0 L100,100 Q50,80 0,100 Z"></path></svg>');
+            background-size: 100% 100%;
+            opacity: 0.3;
+        }
+        
+        .donation-card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            overflow: hidden;
+        }
+        
+        .donation-option {
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .donation-option:hover {
+            transform: translateY(-3px);
+        }
+        
+        .donation-option.active {
+            background: var(--primary);
+            color: white;
+            box-shadow: 0 5px 15px rgba(106, 90, 205, 0.3);
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+        
+        .btn-primary:hover {
+            background-color: #5a4acd;
+            border-color: #5a4acd;
+        }
+        
+        .btn-whatsapp {
+            background-color: var(--secondary);
+            border-color: var(--secondary);
+            color: white;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #1da851;
+            border-color: #1da851;
+            color: white;
+        }
+        
+        .bank-details {
+            background-color: rgba(106, 90, 205, 0.05);
+            border-left: 4px solid var(--primary);
+            padding: 1.5rem;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: rgba(106, 90, 205, 0.1);
+            color: var(--primary);
+        }
+        
+        .accordion-button:focus {
+            box-shadow: 0 0 0 0.25rem rgba(106, 90, 205, 0.25);
+        }
+        
+        .za-flag {
+            height: 20px;
+            margin-right: 8px;
+            vertical-align: text-top;
+        }
+        
+        .impact-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--primary);
+        }
+        
+        .impact-label {
+            font-size: 0.9rem;
+            color: var(--dark);
+            opacity: 0.8;
+        }
+        
+        .form-control:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.25rem rgba(106, 90, 205, 0.25);
+        }
+        
+        #proofPreview {
+            max-width: 100%;
+            margin-top: 10px;
+            display: none;
+        }
+        
+        .invalid-feedback {
+            display: none;
+            color: var(--error);
+            font-size: 0.875em;
+        }
+        
+        .is-invalid {
+            border-color: var(--error);
+        }
+        
+        .is-invalid:focus {
+            box-shadow: 0 0 0 0.25rem rgba(220, 53, 69, 0.25);
+        }
+        
+        .validation-summary {
+            display: none;
+            background-color: rgba(220, 53, 69, 0.1);
+            border-left: 4px solid var(--error);
+            padding: 1rem;
+            margin-bottom: 1.5rem;
+            border-radius: 0 5px 5px 0;
+        }
+        
+        .validation-summary ul {
+            margin-bottom: 0;
+            padding-left: 1rem;
+        }
+
+        /* Add to your existing CSS */
+.progress-container {
+    height: 10px;
+    background: #e9ecef;
+    border-radius: 5px;
+    margin: 1.5rem 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    width: 0;
+    border-radius: 5px;
+    transition: width 2s ease-in-out;
+    position: relative;
+}
+
+.progress-bar::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(90deg, 
+        rgba(255,255,255,0.1) 0%, 
+        rgba(255,255,255,0.3) 50%, 
+        rgba(255,255,255,0.1) 100%);
+    background-size: 200% 100%;
+    animation: shimmer 2s infinite;
+}
+
+@keyframes shimmer {
+    0% { background-position: 200% 0; }
+    100% { background-position: -200% 0; }
+}
+    </style>
+</head>
+<body>
+    
+    <!-- Header -->
+    <header class="creative-header text-center">
+        <div class="container position-relative">
+            <h1 class="display-4 fw-bold mb-3">Support South African Creativity</h1>
+            <p class="lead mb-4">Your donation helps us deliver exceptional design services across Limpopo and beyond</p>
+            <img src="https://upload.wikimedia.org/wikipedia/commons/a/af/Flag_of_South_Africa.svg" alt="South Africa Flag" class="za-flag">
+            <span>Business Registration Number: 2024/003172/07</span>
+
+        </div>
+    </header>
+
+
+    <!-- Main Content -->
+    <main class="container my-5">
+        <div class="row justify-content-center">
+            <div class="col-lg-8">
+                <!-- Impact Stats -->
+                <div hidden class="row text-center mb-5">
+                    <div class="col-md-4 mb-3">
+                        <div class="impact-number">0+</div>
+                        <div class="impact-label">Projects Completed</div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="impact-number">R0+</div>
+                        <div class="impact-label">Donations Received</div>
+                    </div>
+                    <div class="col-md-4 mb-3">
+                        <div class="impact-number">1+</div>
+                        <div class="impact-label">Years in Business</div>
+                    </div>
+                </div>
+                
+                <!-- Donation Form -->
+                <div class="card donation-card mb-5">
+                    <div class="card-body p-4">
+                        <h2 class="card-title mb-4">Make a Donation via Bank Transfer</h2>
+                        <p class="card-text mb-4">Choose an amount to support our creative work. Every rand makes a difference!</p>
+                        
+                        <!-- Validation Summary -->
+                        <div id="validationSummary" class="validation-summary">
+                            <h5 class="text-danger"><i class="fas fa-exclamation-circle me-2"></i>Please fix these issues:</h5>
+                            <ul id="validationErrors"></ul>
+                        </div>
+                        
+                        <form id="donationForm" novalidate>
+                            <!-- Donation Amounts -->
+                            <div class="row g-3 mb-4">
+                                <div class="col-6 col-md-3">
+                                    <div class="donation-option p-3 text-center rounded" data-amount="100">
+                                        <h4 class="mb-0">R100</h4>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="donation-option p-3 text-center rounded" data-amount="250">
+                                        <h4 class="mb-0">R250</h4>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="donation-option active p-3 text-center rounded" data-amount="500">
+                                        <h4 class="mb-0">R500</h4>
+                                    </div>
+                                </div>
+                                <div class="col-6 col-md-3">
+                                    <div class="donation-option p-3 text-center rounded" data-amount="1000">
+                                        <h4 class="mb-0">R1000</h4>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Custom Amount -->
+                            <div class="mb-4">
+                                <label for="customAmount" class="form-label">Or enter a custom amount (ZAR):</label>
+                                <div class="input-group">
+                                    <span class="input-group-text">R</span>
+                                    <input type="number" class="form-control" id="customAmount" name="customAmount" placeholder="Other amount" min="1">
+                                    <input type="hidden" id="selectedAmount" name="selectedAmount" value="500">
+                                </div>
+                                <div class="invalid-feedback" id="amountError">Please select or enter a valid amount (minimum R1)</div>
+                            </div>
+                            
+                            <!-- Donor Information -->
+                            <div class="mb-4">
+                                <h5 class="mb-3"><i class="fas fa-user-circle me-2"></i> Your Information</h5>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="fullName" class="form-label">Full Name <span class="text-danger">*</span></label>
+                                        <input type="text" class="form-control" id="fullName" name="fullName" required>
+                                        <div class="invalid-feedback" id="nameError">Please enter your full name</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="company" class="form-label">Company (Optional)</label>
+                                        <input type="text" class="form-control" id="company" name="company">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label">Email Address <span class="text-danger">*</span></label>
+                                        <input type="email" class="form-control" id="email" name="email" required>
+                                        <div class="invalid-feedback" id="emailError">Please enter a valid email address</div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="phone" class="form-label">Phone Number <span class="text-danger">*</span></label>
+                                        <input type="tel" class="form-control" id="phone" name="phone" required pattern="^(\+27|0)[6-8][0-9]{8}$">
+                                        <div class="invalid-feedback" id="phoneError">Please enter a valid South African phone number (e.g. 0817925033 or +27817925033)</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Bank Details -->
+                            <div class="bank-details mb-4">
+                                <h5 class="mb-3"><i class="fas fa-university me-2"></i> Bank Transfer Details</h5>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="fw-bold">Bank Name:</span>
+                                            <span>Standard Bank</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="fw-bold">Account Name:</span>
+                                            <span>96 Studios</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="fw-bold">Account Type:</span>
+                                            <span>Business Current</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="fw-bold">Account Number:</span>
+                                            <span>10214743584</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="fw-bold">Branch Code:</span>
+                                            <span>051001</span>
+                                        </div>
+                                        <div class="d-flex justify-content-between align-items-center mb-2">
+                                            <span class="fw-bold">Reference:</span>
+                                            <span id="referenceField">Your Name/Business</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Proof of Payment -->
+                            <div class="mb-4">
+                                <label for="proofPayment" class="form-label">Proof of Payment (Screenshot/PDF) <span class="text-danger">*</span></label>
+                                <input type="file" class="form-control" id="proofPayment" name="proofPayment" accept="image/*,.pdf" required>
+                                <div class="invalid-feedback" id="proofError">Please upload proof of payment (image or PDF)</div>
+                                <img id="proofPreview" class="img-thumbnail">
+                            </div>
+                            
+                            <!-- Submit Buttons -->
+                            <div class="d-grid gap-3">
+                                <button type="button" id="whatsappSubmit" class="btn btn-whatsapp py-3 fw-bold">
+                                    <i class="fab fa-whatsapp me-2"></i> SEND VIA WHATSAPP
+                                </button>
+                                <button type="button" id="emailSubmit" class="btn btn-primary py-3 fw-bold">
+                                    <i class="fas fa-envelope me-2"></i> SEND VIA EMAIL
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+                <!-- Expandable About Section -->
+                <div class="accordion mb-5" id="aboutAccordion">
+                    <div class="accordion-item border-0 shadow-sm">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button collapsed py-3" type="button" data-bs-toggle="collapse" data-bs-target="#aboutUs">
+                                <i class="fas fa-info-circle me-2"></i> About Our Studio
+                            </button>
+                        </h2>
+                        <div id="aboutUs" class="accordion-collapse collapse" data-bs-parent="#aboutAccordion">
+                            <div class="accordion-body">
+                                <p>We are a Limpopo-based creative studio specializing in graphic design, photography, and digital solutions. Since 2024, we're helping South African businesses and individuals bring their visual ideas to life.</p>
+                                <p>Your support helps us:</p>
+                                <ul>
+                                    <li>Upgrade our designing softwares and equipment</li>
+                                    <li>Offer discounted services to local non-profits</li>
+                                    <li>Expand our work to serve more clients</li>
+                                    <li>Develop free design resources for students</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add before your footer section -->
+<section hidden class="testimonials py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center mb-5">What Our Supporters Say</h2>
+        <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <div class="testimonial-item text-center px-4">
+                        <div class="mb-4">
+                            <i class="fas fa-quote-left fa-2x text-muted"></i>
+                        </div>
+                        <p class="lead mb-4">"Supporting 96 Studios has been one of the best decisions we've made. Their creative work has transformed our brand."</p>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="https://randomuser.me/api/portraits/women/43.jpg" class="rounded-circle me-3" width="60" alt="Client">
+                            <div class="text-start">
+                                <h6 class="mb-0">Sarah Johnson</h6>
+                                <small class="text-muted">Marketing Director, Cape Town</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <div class="testimonial-item text-center px-4">
+                        <div class="mb-4">
+                            <i class="fas fa-quote-left fa-2x text-muted"></i>
+                        </div>
+                        <p class="lead mb-4">"The team at 96 Studios delivers exceptional quality every time. Our donation was an investment in creativity."</p>
+                        <div class="d-flex justify-content-center align-items-center">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" class="rounded-circle me-3" width="60" alt="Client">
+                            <div class="text-start">
+                                <h6 class="mb-0">David Molefe</h6>
+                                <small class="text-muted">CEO, Jozi Media</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#testimonialCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </button>
+        </div>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4">
+        <div class="container text-center">
+            <h4 class="mb-3">96 Studios</h4>
+            <p class="mb-3">Transforming ideas into visual masterpieces across South Africa</p>
+            <div class="d-flex justify-content-center gap-3 mb-3">
+                <a href="https://www.facebook.com/ninetysixgraphics?mibextid=aejMdD" class="text-white"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://pin.it/2Ablpfe" class="text-white"><i class="fab fa-pinterest"></i></a>
+                <a href="https://instagram.com/96studioss?igshid=OGY3MTU3OGY1Mw==" class="text-white"><i class="fab fa-whatsapp"></i></a>
+            </div>
+            <p class="small text-muted mb-0">
+                &copy; 2025 96 Studios. All rights reserved.<br>
+                WhatsApp: +27 81 792 5033 | Email: 96studios.mails@gmail.com
+            </p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Activate donation amount selection
+        document.querySelectorAll('.donation-option').forEach(option => {
+            option.addEventListener('click', function() {
+                document.querySelectorAll('.donation-option').forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                this.classList.add('active');
+                
+                // Update selected amount
+                const amount = this.getAttribute('data-amount');
+                document.getElementById('selectedAmount').value = amount;
+                document.getElementById('customAmount').value = '';
+                
+                // Clear amount validation
+                document.getElementById('customAmount').classList.remove('is-invalid');
+                document.getElementById('amountError').style.display = 'none';
+            });
+        });
+        
+        // When custom amount is entered, deselect other options
+        document.getElementById('customAmount').addEventListener('input', function() {
+            if(this.value) {
+                document.querySelectorAll('.donation-option').forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                document.getElementById('selectedAmount').value = this.value;
+                
+                // Clear amount validation
+                this.classList.remove('is-invalid');
+                document.getElementById('amountError').style.display = 'none';
+            }
+        });
+        
+        // Update reference field as user types their name
+        document.getElementById('fullName').addEventListener('input', function() {
+            const referenceField = document.getElementById('referenceField');
+            referenceField.textContent = this.value || 'Your Name/Business Name';
+        });
+        
+        // Preview proof of payment image
+        document.getElementById('proofPayment').addEventListener('change', function(e) {
+            const file = e.target.files[0];
+            if (file && file.type.match('image.*')) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    const preview = document.getElementById('proofPreview');
+                    preview.src = e.target.result;
+                    preview.style.display = 'block';
+                }
+                reader.readAsDataURL(file);
+            }
+            
+            // Clear proof validation
+            this.classList.remove('is-invalid');
+            document.getElementById('proofError').style.display = 'none';
+        });
+        
+        // Validate form before submission
+        function validateForm() {
+            let isValid = true;
+            const errors = [];
+            
+            // Reset validation
+            document.querySelectorAll('.is-invalid').forEach(el => {
+                el.classList.remove('is-invalid');
+            });
+            document.querySelectorAll('.invalid-feedback').forEach(el => {
+                el.style.display = 'none';
+            });
+            document.getElementById('validationSummary').style.display = 'none';
+            document.getElementById('validationErrors').innerHTML = '';
+            
+            // Validate amount
+            const amount = document.getElementById('customAmount').value || document.getElementById('selectedAmount').value;
+            if (!amount || isNaN(amount) || parseFloat(amount) < 1) {
+                document.getElementById('customAmount').classList.add('is-invalid');
+                document.getElementById('amountError').style.display = 'block';
+                errors.push('Please select or enter a valid donation amount (minimum R1)');
+                isValid = false;
+            }
+            
+            // Validate full name
+            const fullName = document.getElementById('fullName').value.trim();
+            if (!fullName) {
+                document.getElementById('fullName').classList.add('is-invalid');
+                document.getElementById('nameError').style.display = 'block';
+                errors.push('Please enter your full name');
+                isValid = false;
+            }
+            
+            // Validate email
+            const email = document.getElementById('email').value.trim();
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!email || !emailRegex.test(email)) {
+                document.getElementById('email').classList.add('is-invalid');
+                document.getElementById('emailError').style.display = 'block';
+                errors.push('Please enter a valid email address');
+                isValid = false;
+            }
+            
+            // Validate phone (South African format)
+            const phone = document.getElementById('phone').value.trim();
+            const phoneRegex = /^(\+27|0)[6-8][0-9]{8}$/;
+            if (!phone || !phoneRegex.test(phone)) {
+                document.getElementById('phone').classList.add('is-invalid');
+                document.getElementById('phoneError').style.display = 'block';
+                errors.push('Please enter a valid South African phone number (e.g. 0817925033 or +27817925033)');
+                isValid = false;
+            }
+            
+            // Validate proof of payment
+            const proofPayment = document.getElementById('proofPayment').files[0];
+            if (!proofPayment) {
+                document.getElementById('proofPayment').classList.add('is-invalid');
+                document.getElementById('proofError').style.display = 'block';
+                errors.push('Please upload proof of payment (image or PDF)');
+                isValid = false;
+            }
+            
+            // Show validation summary if errors exist
+            if (errors.length > 0) {
+                document.getElementById('validationSummary').style.display = 'block';
+                const errorsList = document.getElementById('validationErrors');
+                errors.forEach(error => {
+                    const li = document.createElement('li');
+                    li.textContent = error;
+                    errorsList.appendChild(li);
+                });
+                
+                // Scroll to validation summary
+                document.getElementById('validationSummary').scrollIntoView({
+                    behavior: 'smooth',
+                    block: 'center'
+                });
+            }
+            
+            return isValid;
+        }
+        
+        // WhatsApp Submit with validation
+        document.getElementById('whatsappSubmit').addEventListener('click', function() {
+            if (!validateForm()) return;
+            
+            const form = document.getElementById('donationForm');
+            const formData = new FormData(form);
+            
+            // Get form values
+            const amount = formData.get('customAmount') || formData.get('selectedAmount');
+            const name = formData.get('fullName');
+            const company = formData.get('company');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            
+            // Create WhatsApp message
+            let message = `Hi 96 Studios! I'd like to make a donation:%0A%0A`;
+            message += `*Amount:* R${amount}%0A`;
+            message += `*Name:* ${name}%0A`;
+            if (company) message += `*Company:* ${company}%0A`;
+            message += `*Email:* ${email}%0A`;
+            message += `*Phone:* ${phone}%0A%0A`;
+            message += `I've made the bank transfer and will attach my proof of payment.`;
+            
+            // Open WhatsApp with pre-filled message
+            window.open(`https://wa.me/27817925033?text=${message}`, '_blank');
+        });
+        
+        // Email Submit with validation
+        document.getElementById('emailSubmit').addEventListener('click', function() {
+            if (!validateForm()) return;
+            
+            const form = document.getElementById('donationForm');
+            const formData = new FormData(form);
+            
+            // Get form values
+            const amount = formData.get('customAmount') || formData.get('selectedAmount');
+            const name = formData.get('fullName');
+            const company = formData.get('company');
+            const email = formData.get('email');
+            const phone = formData.get('phone');
+            
+            // Create email subject and body
+            const subject = `Donation of R${amount} from ${name}`;
+            let body = `96 Studios,%0A%0A`;
+            body += `Kindly I would like to confirm my donation of R${amount}.%0A%0A`;
+            body += `My details:%0A`;
+            body += `Name: ${name}%0A`;
+            if (company) body += `Company: ${company}%0A`;
+            body += `Email: ${email}%0A`;
+            body += `Phone: ${phone}%0A%0A`;
+            body += `I've attached my proof of payment for your records.%0A%0A`;
+            body += `Best regards,%0A${name}`;
+            
+            // Open mail client
+            window.open(`mailto:96studios.mails@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`, '_blank');
+        });
+        
+    </script>
+</body>
+</html>
