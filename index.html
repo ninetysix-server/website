@@ -523,7 +523,7 @@
                 <div class="card">
                     <img src="assets/images/service3.gif" alt="Service 3" class="card-img-top">
                     <div class="card-body">
-                        <button class="btn btn-primary go-to-button">Go To</button>
+                        <button id="photoBtn" class="btn btn-primary go-to-button">Go To</button>
                     </div>
                 </div>
             </div>
@@ -533,7 +533,7 @@
                 <div class="card">
                     <img src="assets/images/service4.gif" alt="Service 4" class="card-img-top">
                     <div class="card-body">
-                        <button class="btn btn-primary go-to-button">Go To</button>
+                        <button id="artBtn" class="btn btn-primary go-to-button">Go To</button>
                     </div>
                 </div>
             </div>
@@ -1612,6 +1612,33 @@ document.addEventListener('DOMContentLoaded', function() {
             document.documentElement.style.scrollPaddingTop = '40px';
         });
     </script>
+
+
+        <script>
+ // Function to show service message
+        function showServiceMessage(serviceName) {
+        alert("Service Coming Soon: " + serviceName);
+        }
+
+        // Nav links
+        document.getElementById('smart1').addEventListener('click', function(e) {
+        e.preventDefault();
+        showServiceMessage("PHOTOGRAPHY");
+        });
+        document.getElementById('smart2').addEventListener('click', function(e) {
+        e.preventDefault();
+        showServiceMessage("WALL ART & DECO");
+        });
+
+        // Buttons (using class)
+        document.querySelectorAll('.go-to-button')[0].addEventListener('click', function() {
+        showServiceMessage("Photography");
+        });
+        document.querySelectorAll('.go-to-button')[1].addEventListener('click', function() {
+        showServiceMessage("Wall Art and Decor");
+        });
+    </script>
+
 
 </body>
 </html>
