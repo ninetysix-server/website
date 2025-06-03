@@ -819,5 +819,23 @@
                         });
                     </script>
 
+       <script>
+ // Function to show service message
+        function showServiceMessage(serviceName) {
+        alert("Service Coming Soon: " + serviceName);
+        }
+
+        // Nav links
+        document.getElementById('smart1').addEventListener('click', function(e) {
+        e.preventDefault();
+        showServiceMessage("PHOTOGRAPHY");
+        });
+        document.getElementById('smart2').addEventListener('click', function(e) {
+        e.preventDefault();
+        showServiceMessage("WALL ART & DECO");
+        });
+
+    </script>
+
 </body>
 </html>
